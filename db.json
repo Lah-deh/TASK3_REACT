@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": "b4b8",
+      "email": "successaso@gmail.com",
+      "password": "ttfuyghiojpk",
+      "fullName": "SUCCESS BOLUWATIFE ASOKERE",
+      "phone": "08144316917",
+      "address": "1, Rasheed alao street , ijoko Ogun state",
+      "tickets": []
+    },
+    {
+      "id": "2022",
+      "email": "ifeasokere@gmail.com",
+      "password": "Boluwatife",
+      "fullName": "SUCCESS BOLUWATIFE ASOKERE",
+      "phone": "08144316917",
+      "address": "1, Rasheed alao street , ijoko Ogun state",
+      "tickets": []
+    },
+    {
+      "id": "8a51",
+      "email": "successasokere46@gmail.com",
+      "password": "Boluwatife",
+      "fullName": "SUCCESS BOLUWATIFE ASOKERE",
+      "phone": "08144316917",
+      "address": "1, Rasheed alao street , ijoko Ogun state",
+      "tickets": [
+        {
+          "id": "qhlx",
+          "title": "dxfchgvjb",
+          "description": "fcgvjhbknbv cxfcgfhv",
+          "priority": "Medium",
+          "status": "In Progress",
+          "createdAt": "2025-10-25T20:32:40.834Z"
+        },
+        {
+          "id": "30x6",
+          "title": "rtygiuhij",
+          "description": "etrydtfuyguiuhj",
+          "priority": "Low",
+          "status": "Resolved",
+          "createdAt": "2025-10-25T20:35:28.472Z"
+        },
+        {
+          "id": "i9q9",
+          "title": "dtfcygvuhbijnerd6ft7gy",
+          "description": "ertfyguhijonhbggvfcd",
+          "priority": "Medium",
+          "status": "Open",
+          "createdAt": "2025-10-25T21:37:29.256Z"
+        }
+      ]
+    }
+  ]
+}

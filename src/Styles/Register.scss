@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.head2{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    gap: 30%;
+    
+
+    .back{
+        text-decoration: none;
+        color: white;
+        font-size: 1.4rem;
+        
+        
+
+        
+    }
+}
+
+
+
+.register-page{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+    margin-bottom: 20%;
+
+    Form{
+        .error{
+            color: red;
+            font-size: 12px;
+            text-align: center;
+        }
+        input{
+            height: 40px;
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+            margin-bottom: 15px;
+            padding-left: 20px;
+
+
+            :active, :focus{
+                outline: none;
+                border: none;
+            }
+        }
+
+        button{
+            height: 60px;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 15px;
+            background-color: blue;
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+            
+
+        }
+    }
+
+    p{
+        text-align: center;
+    }
+}

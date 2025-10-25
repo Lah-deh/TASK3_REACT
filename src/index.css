@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden;
+
+    background-color: black;
+    
+
+
+}
+
+
+
+.footer {
+  background-color: black;
+  color: #fff;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+
+  .footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media(min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .footer-links,
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #00aaff;
+        }
+      }
+    }
+  }
+
+  .footer-copy {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+}
+
+
+.dashboard-header {
+  background-color: #0f0f12;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.dashboard-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #a9a9b3;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-in;
+}
+
+.logout-btn:hover {
+  color: #ffffff;
+}
+
+
+.footer-nav {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 12px 0;
+  border-top: 1px solid #333;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #bfbfbf;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+
+    .icon {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    &.active,
+    &:hover {
+      color: #4cc9f0;
+    }
+  }
+}
+
+
+
