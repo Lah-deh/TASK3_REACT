@@ -5,7 +5,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Toast from "../Components/Toast.jsx";
 
-// Show validation errors as toast
+
+const api = axios.create({
+  baseURL: "https://mockdata-93rw.onrender.com",
+});
+
+
 const ToastErrors = ({ setToast }) => {
   const { errors, submitCount } = useFormikContext();
 
@@ -30,13 +35,15 @@ const Form2 = () => {
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email").required("Email is required."),
-    password: Yup.string().min(6, "Minimum 6 characters").required("Password is required."),
+    password: Yup.string()
+      .min(6, "Minimum 6 characters")
+      .required("Password is required."),
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await axios.get(
-        `http://localhost:5000/users?email=${values.email}&password=${values.password}`
+      const response = await api.get(
+        `/users?email=${values.email}&password=${values.password}`
       );
 
       if (response.data.length > 0) {
@@ -45,7 +52,10 @@ const Form2 = () => {
         setToast({ message: "Login successful!", type: "success" });
         setTimeout(() => navigate("/dashboard"), 1500);
       } else {
-        setToast({ message: "Invalid credentials. Please try again.", type: "error" });
+        setToast({
+          message: "Invalid credentials. Please try again.",
+          type: "error",
+        });
       }
     } catch (error) {
       console.error(error);

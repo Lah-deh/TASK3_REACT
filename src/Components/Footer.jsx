@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="footer-links">
           <a href="/">Home</a>
           <Link to={"/Register"} >Register</Link>
-          <a href="#contact">Contact</a>
+          <Link to={"/Login"}>Login</Link>
         </div>
         <div className="footer-socials">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>

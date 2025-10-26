@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+// Create reusable axios instance
+const api = axios.create({
+  baseURL: "https://mockdata-93rw.onrender.com",
+});
+
 const Stats = () => {
   const [stats, setStats] = useState({ total: 0, open: 0, resolved: 0 });
   const navigate = useNavigate();
@@ -12,8 +17,8 @@ const Stats = () => {
         const user = JSON.parse(localStorage.getItem("user"));
         if (!user) return;
 
-        // Get current user's record (including tickets)
-        const res = await axios.get(`http://localhost:5000/users/${user.id}`);
+        // Fetch user data from your Render API
+        const res = await api.get(`/users/${user.id}`);
         const tickets = res.data.tickets || [];
 
         const total = tickets.length;

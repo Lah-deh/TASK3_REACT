@@ -40,6 +40,7 @@ body{
         padding-top: 15%;
         padding-left: 5%;
         padding-right: 5%;
+        text-align: left;
     }
 
     button{
@@ -89,6 +90,9 @@ body{
         box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         color: #333;
         transition: transform 0.3s ease;
+        p{
+            text-align: left;
+        }
 
         &:hover {
             transform: translateY(-5px);

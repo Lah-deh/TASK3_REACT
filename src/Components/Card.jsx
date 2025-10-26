@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Toast from "../Components/Toast.jsx";
 
+// API instance
+const api = axios.create({
+  baseURL: "https://mockdata-93rw.onrender.com",
+});
+
 const Card = () => {
   const [tickets, setTickets] = useState([]);
   const [editingId, setEditingId] = useState(null);
@@ -10,50 +15,56 @@ const Card = () => {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
+  // Fetch user's tickets
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/users/${user.id}`);
+        const res = await api.get(`/users/${user.id}`);
         setTickets(res.data.tickets || []);
       } catch (error) {
+        console.error(error);
         setToast({ message: "Failed to load tickets.", type: "error" });
       }
     };
     fetchTickets();
   }, [user.id]);
 
+  // Delete ticket
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this ticket?")) return;
 
     try {
-      const res = await axios.get(`http://localhost:5000/users/${user.id}`);
+      const res = await api.get(`/users/${user.id}`);
       const updatedTickets = res.data.tickets.filter((t) => t.id !== id);
 
-      await axios.put(`http://localhost:5000/users/${user.id}`, {
+      await api.put(`/users/${user.id}`, {
         ...res.data,
         tickets: updatedTickets,
       });
 
       setTickets(updatedTickets);
       setToast({ message: "Ticket deleted successfully!", type: "success" });
-    } catch {
+    } catch (error) {
+      console.error(error);
       setToast({ message: "Error deleting ticket.", type: "error" });
     }
   };
 
+  // Edit ticket
   const handleEdit = (ticket) => {
     setEditingId(ticket.id);
     setEditedTicket(ticket);
   };
 
+  // Save edited ticket
   const handleSave = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5000/users/${user.id}`);
+      const res = await api.get(`/users/${user.id}`);
       const updatedTickets = res.data.tickets.map((t) =>
         t.id === id ? editedTicket : t
       );
 
-      await axios.put(`http://localhost:5000/users/${user.id}`, {
+      await api.put(`/users/${user.id}`, {
         ...res.data,
         tickets: updatedTickets,
       });
@@ -61,7 +72,8 @@ const Card = () => {
       setTickets(updatedTickets);
       setEditingId(null);
       setToast({ message: "Ticket updated successfully!", type: "success" });
-    } catch {
+    } catch (error) {
+      console.error(error);
       setToast({ message: "Error saving ticket.", type: "error" });
     }
   };

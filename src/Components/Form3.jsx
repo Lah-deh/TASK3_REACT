@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import Toast from "../Components/Toast.jsx"; 
+import Toast from "../Components/Toast.jsx";
+
+// API instance
+const api = axios.create({
+  baseURL: "https://mockdata-93rw.onrender.com",
+});
 
 const TicketForm = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -24,7 +29,10 @@ const TicketForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     if (!user) {
-      setToast({ message: "You must be logged in to create a ticket.", type: "error" });
+      setToast({
+        message: "You must be logged in to create a ticket.",
+        type: "error",
+      });
       return;
     }
 
@@ -35,13 +43,17 @@ const TicketForm = () => {
     };
 
     try {
-      const res = await axios.get(`http://localhost:5000/users/${user.id}`);
+      // Get user data
+      const res = await api.get(`/users/${user.id}`);
+
+      // Add new ticket to user's ticket list
       const updatedUser = {
         ...res.data,
-        tickets: [...res.data.tickets, newTicket],
+        tickets: [...(res.data.tickets || []), newTicket],
       };
 
-      await axios.put(`http://localhost:5000/users/${user.id}`, updatedUser);
+      // Update user data
+      await api.put(`/users/${user.id}`, updatedUser);
 
       setToast({ message: "Ticket created successfully!", type: "success" });
       resetForm();

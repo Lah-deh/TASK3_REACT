@@ -5,7 +5,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Toast from "../Components/Toast.jsx";
 
-// Optional: Shows validation errors as custom toast
+const api = axios.create({
+  baseURL: "https://mockdata-93rw.onrender.com",
+});
+
 const ToastErrors = ({ setToast }) => {
   const { errors, submitCount } = useFormikContext();
 
@@ -41,7 +44,8 @@ const Register = () => {
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
-      const res = await axios.get("http://localhost:5000/users");
+      
+      const res = await api.get("/users");
       const userExists = res.data.find((user) => user.email === values.email);
 
       if (userExists) {
@@ -49,7 +53,8 @@ const Register = () => {
         return;
       }
 
-      const response = await axios.post("http://localhost:5000/users", {
+      
+      const response = await api.post("/users", {
         ...values,
         tickets: [],
       });
@@ -76,8 +81,6 @@ const Register = () => {
           onClose={() => setToast({ message: "", type: "" })}
         />
       )}
-
-      <h2>Register</h2>
 
       <Formik
         initialValues={initialValues}
