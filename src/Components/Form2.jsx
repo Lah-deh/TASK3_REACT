@@ -101,7 +101,7 @@ const Form2 = () => {
       </Formik>
 
       <p>
-        Don’t have an account? <Link to={"/Register"} >Register</Link>
+        Don’t have an account? <Link to={"/register"} >Register</Link>
       </p>
     </div>
   );

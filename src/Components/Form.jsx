@@ -118,7 +118,7 @@ const Register = () => {
       </Formik>
 
       <p>
-        Already have an account? <Link to={"/Login"}>Login</Link>
+        Already have an account? <Link to={"/login"}>Login</Link>
       </p>
     </div>
   );
