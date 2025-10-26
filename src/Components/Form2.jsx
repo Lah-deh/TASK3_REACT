@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Toast from "../Components/Toast.jsx";
-
+import Link from 'react-router-dom'
 
 const api = axios.create({
   baseURL: "https://mockdata-93rw.onrender.com",
@@ -101,7 +101,7 @@ const Form2 = () => {
       </Formik>
 
       <p>
-        Don’t have an account? <a href="/register">Register</a>
+        Don’t have an account? <Link to={"/Register"} >Register</Link>
       </p>
     </div>
   );
