@@ -24,23 +24,24 @@ body{
 
 .hero {
     width: 100%;
-    height: 100vh; 
-    background-image: url("../assets/Hero.png");
+    height: 100%; 
+    background-image: url("../Images/Hero.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
 
     h2{
-        padding-top: 60%;
+        padding-top: 20%;
         padding-left: 5%;
         padding-right: 5%;
     }
     p{
-        padding-top: 15%;
+        padding-top: 10%;
         padding-left: 5%;
         padding-right: 5%;
         text-align: left;
+        color: black;
     }
 
     button{
@@ -48,10 +49,11 @@ body{
         color: white;
         border-color: black;
         padding: 10px;
-        margin-top: 15%;
+        margin-top: 10%;
         margin-top: 10%;
         border-radius: 30px;
         margin-left: 5%;
+        margin-bottom: 10%;
 
         
     }
@@ -72,14 +74,17 @@ body{
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 20%;
+    background-color: black;
+    
     h2{
         margin-bottom: 5%;
+        color: white; 
     }
 
-
     .grid{
+       
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(1, 1fr); 
         gap: 2rem;
     }
 
@@ -87,9 +92,13 @@ body{
         background-color: whitesmoke;
         padding: 2rem;
         border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        color: #333;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2); 
+        color: black; 
         transition: transform 0.3s ease;
+        
+      
+        min-height: 250px; 
+
         p{
             text-align: left;
         }
@@ -100,12 +109,72 @@ body{
     }
     .icon{
         font-size: 2.5rem;
-    
     }
+}
 
+@media(min-width: 768px){
+    .features{
+        width: 40rem;
+        
+        .grid{
+        
+            grid-template-columns: repeat(2, 20rem); 
+            
+        }
+    }
 }
 
 
+@media(min-width: 1024px){
+    .hero{
+        h2{
+            font-size: 40px;
+        }
+        p{
+            font-size: 30px;
+        }
+        button{
+            font-size: 25px;
+            padding: 10px;
+        }
+    }
 
 
+    .features{
+        h2{
+            font-size: 30px;
+        }
+        .grid{
+            
+            grid-template-columns: repeat(2,24rem );
+        }
+    }
+}
 
+
+@media(min-width: 1440px){
+    .hero{
+        h2{
+            font-size: 40px;
+        }
+        p{
+            font-size: 30px;
+        }
+        button{
+            font-size: 25px;
+            padding: 10px;
+        }
+    }
+
+
+    .features{
+        h2{
+            font-size: 35px;
+        }
+        .grid{
+            
+            grid-template-columns: repeat(2,33rem );
+            font-size: 26px;
+        }
+    }
+}

@@ -6,7 +6,7 @@ import Formm from '../Components/Form.jsx'
 
 const Register = () => {
   return (
-    <div>
+    <div className='redd'> 
       <Head2 />
       <Formm />
       <Footer />

@@ -6,7 +6,7 @@ import '../Styles/Login.scss'
 
 const Login = () => {
   return (
-    <div>
+    <div className='logg'>
       <Head3 />
       <Form2 />
       <Footer />
