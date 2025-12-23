@@ -1,16 +1,71 @@
-# React + Vite
+HNG Task 3 - Ticket Management Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo
+https://task-3-react-five.vercel.app/
 
-Currently, two official plugins are available:
+Description
+This is a ticket management web application that enables authenticated users to manage support tickets through a simple and intuitive interface. The application implements full CRUD operations and demonstrates common patterns used in real-world frontend systems.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+User authentication flow
 
-## Expanding the ESLint configuration
+Protected ticket dashboard
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create, view, edit, and delete tickets
+
+Form handling and validation
+
+State management for ticket data
+
+Responsive user interface
+
+
+Tech Stack
+
+React
+
+JavaScript
+
+CSS
+
+Vercel for deployment
+
+
+Application Flow
+
+Users authenticate before accessing the ticket dashboard
+
+Authenticated users can create new tickets
+
+Existing tickets can be edited or deleted
+
+Ticket data updates dynamically within the interface
+
+
+Running the Project Locally
+
+Clone the repository:
+
+git clone 
+
+
+Navigate to the project directory:
+
+cd task-3-react
+
+
+Install dependencies:
+
+npm install
+
+
+Start the development server:
+
+npm run dev
+
+
+View the application in your browser:
+
+http://localhost:5173
